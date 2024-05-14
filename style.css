@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya&family=Alegreya+Sans&family=Briem+Hand&display=swap');
+
+body {
+	/* display: flex;
+	justify-content: center; 
+	align-items: center;
+	flex-wrap: wrap; */
+	background: #535098;
+	min-height: 100vh;
+  font-family: "Alegreya Sans", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+/* start welcome animation */
+
+.welcome {
+  background: #8c83b3;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.welcome .splash {
+  height: 0px;
+  padding: 0px;
+  border: 130em solid #8c83b3;
+  position: fixed;
+  left: 50%;
+  top: 100%;
+  display: block;
+  box-sizing: initial;
+  overflow: hidden;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: puff 0.5s 1.8s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, borderRadius 0.2s 2.3s linear forwards;
+}
+
+.welcome #welcome {
+  background: #6d5db3 ;
+  width: 56px;
+  height: 56px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  animation: init 0.5s 0.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards, moveDown 1s 0.8s cubic-bezier(0.6, -0.28, 0.735, 0.045) forwards, moveUp 1s 1.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards, materia 0.5s 2.7s cubic-bezier(0.86, 0, 0.07, 1) forwards, hide 2s 2.9s ease forwards;
+}
+   
+
+/* .welcome header,
+.welcome a.btn {
+  opacity: 0;
+  animation: moveIn 2s 3.1s ease forwards;
+} */
+
+@keyframes init {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 56px;
+    height: 56px;
+    margin-top: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes puff {
+  0% {
+    top: 100%;
+    height: 0px;
+    padding: 0px;
+  }
+  100% {
+    top: 50%;
+    height: 100%;
+    padding: 0px 100%;
+  }
+}
+
+@keyframes borderRadius {
+  0% {
+    border-radius: 50%;
+  }
+  100% {
+    border-radius: 0px;
+  }
+}
+
+@keyframes moveDown {
+  0% {
+    top: 50%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+@keyframes moveUp {
+  0% {
+    background: #6d5db3;
+    top: 100%;
+  }
+  50% {
+    top: 40%;
+  }
+  100% {
+    top: 50%;
+    background: #6d5db3;
+  }
+}
+
+
+@keyframes moveIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+} 
+
+a {
+  text-decoration: none;
+}
+
+.wish {
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  padding: 30px;
+  color: #9492d2;
+  font-family: "Briem Hand", cursive;
+  font-size: 30px;
+}
+
+section::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#6a628c, #6a628c);
+	clip-path: circle(20% at right 80%);
+}
+
+section::after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(#6a628c, #6a628c);
+	clip-path: circle(18% at 10% 10%);
+}
+
+.container {
+  /* padding: 30px; */
+	position: relative;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	/* flex-wrap: wrap; */
+	margin: 30px 0;
+}
+
+.container .card {
+	position: relative;
+	width: 320px;
+	height: 430px;
+	background: rgba(185, 139, 139, 0.05);
+	margin: 20px;
+	box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+	border-radius: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	backdrop-filter: blur(10px);
+}
+
+.container .card .content {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	transition: 0.5s;
+}
+
+.container .card:hover .content {
+	transform: translateY(-20px);
+}
+
+.container .card .content .imgBx {
+	position: relative;
+	width: 200px;
+	height: 200px;
+	overflow: hidden;
+}
+
+.container .card .content .imgBx img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.container .card .content .contentBx h3 {
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 500;
+	font-size: 18px;
+	text-align: center;
+	margin: 20px 0 10px;
+	line-height: 1.1em;
+}
+
+.container .card .content .contentBx h3 span {
+	font-size: 12px;
+	font-weight: 300;
+	text-transform: initial;
+}
+
+.container .card .sci {
+	position: absolute;
+	bottom: 50px;
+	display: flex;
+}
+
+.container .card .sci li {
+	list-style: none;
+	margin: 0 10px;
+	transform: translateY(40px);
+	transition: 0.5s;
+	opacity: 0;
+}
+
+.container .card:hover .sci li {
+	transform: translateY(0px);
+	opacity: 1;
+}
+
+.container .card .sci li a {
+	color: #fff;
+	font-size: 20px;
+}
